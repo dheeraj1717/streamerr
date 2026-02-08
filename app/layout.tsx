@@ -19,22 +19,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme: dark }, layout: {
-          logoImageUrl: "/StreamerrLogo2.png",
-          logoPlacement: "inside",
-        },}>
-      <html lang="en">
-        <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            forcedTheme="dark"
-            storageKey="streamerr-theme"
-          >
-            <Toaster theme="light" position="top-right" />
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <ClerkProvider 
+  appearance={{ 
+    baseTheme: dark, 
+    layout: {
+      logoImageUrl: "/StreamerrLogo2.png",
+      logoPlacement: "inside",
+    }
+  }}
+>
+  <html lang="en">
+    <body className={inter.className}>
+      <ThemeProvider
+        attribute="class"
+        forcedTheme="dark"
+        storageKey="streamerr-theme"
+      >
+        <Toaster theme="light" position="top-right" />
+        {children}
+      </ThemeProvider>
+    </body>
+  </html>
+</ClerkProvider>
+
   );
 }
