@@ -19,7 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme: dark }}>
+    <ClerkProvider appearance={{ baseTheme: dark }, layout: {
+          logoImageUrl: "/StreamerrLogo2.png",
+          logoPlacement: "inside",
+        },}>
       <html lang="en">
         <body className={inter.className}>
           <ThemeProvider
